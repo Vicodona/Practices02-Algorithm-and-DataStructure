@@ -59,7 +59,8 @@ for j = 1 to Length(A)                         n
 #### 1.3.5 算法实现
 
 Python 实现
-```
+
+```python
 #!/usr/bin/env python
 # Python 实现选择排序
 
@@ -78,7 +79,7 @@ def selection_sort(arr):
 
 ```
 C++ 实现
-```
+```c++
 void selectionSort(int arr[], int n){
     for(int i=0; i<n; i++){
 	int minIndex = i;

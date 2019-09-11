@@ -81,7 +81,8 @@ void BubbleSort1(int a[], int n)
 #### 1.1.5 算法实现
 
 Python实现
-```
+
+```python
 #!/usr/bin/env python
 # Python 程序完成冒泡排序
 
@@ -118,7 +119,8 @@ def recursive_bubble(arr):
 ```
 
 c++ 实现
-```
+
+```c++
 void bubble_sort(int *a, int len){
 	for(int i=0; i<len;i++){
 	    for(int j=0; j<len-i-1;j++){

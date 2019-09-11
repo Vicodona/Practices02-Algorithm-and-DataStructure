@@ -50,3 +50,60 @@ quickSort(arr, low, high)
 #### 四、图解快排
 ![quick_sort](../images/quick_sort.png)
 
+#### 五、算法实现
+python 实现
+
+```python
+#!/usr/bin/env python
+# Python 实现快排(升序)
+
+
+def partition(arr, low, high):
+    i = (low - 1)
+    pivot = arr[high]
+
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i = i + 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i+1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+
+def quick_sort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quick_sort(arr, low, pi-1)
+        quick_sort(arr, pi+1, high)
+    return arr
+```
+
+c++ 实现
+
+```c++
+Partition(int A[], int low, int high){
+    int pivot = A[low];
+	while(low < high){
+	    while(low < high &&  A[high] >= pivot){
+		    high--;
+		}
+		A[low] = A[high];
+		
+		while(low < high && A[low] <= pivot){
+		    low++;
+		}
+		A[high] = A[low];
+	}
+	A[low] = pivot;
+	return low;
+}
+
+void QucikSort(int A[], int low, int high){
+    if(low < high){
+	    int pivot = Partition(A, low, high);
+		QucikSort(A, low, pivot-1);
+		QucikSort(A, pivot+1, high);
+	}
+}
+
+```
